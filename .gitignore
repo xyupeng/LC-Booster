@@ -1,0 +1,8 @@
+*.swp
+*.pyc
+.idea/
+__pycache__/
+checkpoints/
+tmp/
+demo/
+data/
