@@ -5,17 +5,30 @@ This is the official implementation of [LC-Booster](https://arxiv.org/abs/2205.0
     <img src="resources/banner.png" alt="Banner" width="500" />
 </p>
 
-## Environment
+## Preparation
+### Environment
 1.  Install `pytorch>=1.7.0` and `torchvision`.
 2. `pip install -r requirements.txt`
 
-## Datasets
+### Datasets
 Please download and organize the datasets in this structure:
 ```
 LC-Booster
 ├── data/
     ├── cifar-10-batches-py/
     ├── cifar-100-python/
+```
+
+### Create Noisy Labels
+```
+# cifar10, symmetric noise 90%
+python create_noisy_labels.py --ds cifar10 --type sym --ratio 0.9 --seed 42
+
+# cifar100, symmetric noise 90%
+python create_noisy_labels.py --ds cifar100 --type sym --ratio 0.9 --seed 42
+
+# cifar10, asymmetric noise 40%
+python create_noisy_labels.py --ds cifar10 --type asym --ratio 0.4 --seed 42
 ```
 
 ## Train
